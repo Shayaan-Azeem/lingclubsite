@@ -50,11 +50,22 @@
         ul {
             list-style-type: none;
         }
+        .secondary-title {
+            font-size: 2em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .script-name {
+            font-size: 1.2em;
+            color: #ddd;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1 id="club-title">White Oaks Linguistics Club</h1>
+        <h1>White Oaks Linguistics Club</h1>
+        <h2 id="club-title" class="secondary-title">White Oaks Linguistics Club</h2>
+        <p id="script-name" class="script-name">(Latin)</p>
         <nav>
             <a href="#about">About</a>
             <a href="#competitions">Competitions</a>
@@ -89,37 +100,39 @@
         <section id="contact">
             <h2>Contact Us</h2>
             <p>If you have any questions or would like to join the club, feel free to contact us!</p>
-            <p><strong>Club President:</strong> Shayaan & Radvin </p>
+            <p><strong>Club President:</strong> Shayaan</p>
             <p><strong>Meeting Times:</strong> Biweekly on Wednesdays</p>
-            <p><strong>Email:</strong> <a href="mailto:wteam@wosslinguistics.club">team@wosslinguistics.club</a></p>
+            <p><strong>Email:</strong> <a href="mailto:whiteoakslinguistics@example.com">whiteoakslinguistics@example.com</a></p>
         </section>
     </main>
 
     <script>
-        // Array of club names in different scripts
+        // Array of club names in different scripts with their script names
         const clubNames = [
-            "White Oaks Linguistics Club", // English
-            "Уайт Оукс Лингвистикс Клуб", // Cyrillic (Russian)
-            "نادي اللغويات وايت أوكس",    // Arabic
-            "화이트 오크스 언어 클럽",     // Korean
-            "白橡樹語言俱樂部",             // Chinese (Traditional)
-            "クラブ ホワイト オークス",    // Japanese
-            "Κλαμπ Γλωσσολογίας Λευκών Δρυών" // Greek
+            { name: "White Oaks Linguistics Club", script: "Latin" }, // English
+            { name: "Уайт Оукс Лингвистикс Клуб", script: "Cyrillic (Russian)" }, // Cyrillic
+            { name: "نادي اللغويات وايت أوكس", script: "Arabic" }, // Arabic
+            { name: "화이트 오크스 언어 클럽", script: "Korean" }, // Korean
+            { name: "白橡樹語言俱樂部", script: "Chinese (Traditional)" }, // Chinese
+            { name: "クラブ ホワイト オークス", script: "Japanese" }, // Japanese
+            { name: "Κλαμπ Γλωσσολογίας Λευκών Δρυών", script: "Greek" } // Greek
         ];
 
         // Set interval for dynamic header change
         let currentIndex = 0;
         const titleElement = document.getElementById('club-title');
+        const scriptElement = document.getElementById('script-name');
 
         function changeTitle() {
-            // Update the header with the current language
-            titleElement.textContent = clubNames[currentIndex];
+            // Update the header with the current language and script
+            titleElement.textContent = clubNames[currentIndex].name;
+            scriptElement.textContent = `(${clubNames[currentIndex].script})`;
             // Move to the next title in the array
             currentIndex = (currentIndex + 1) % clubNames.length;
         }
 
-        // Change the title every 3 seconds
-        setInterval(changeTitle, 3000);
+        // Change the title every 2 seconds (2000 milliseconds)
+        setInterval(changeTitle, 2000);
     </script>
 </body>
 </html>
