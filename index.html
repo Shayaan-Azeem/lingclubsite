@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Oaks Linguistics Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0;
+        }
+        section {
+            margin: 20px 0;
+        }
+        .cta {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .cta:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="club-title">White Oaks Linguistics Club</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#competitions">Competitions</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>The White Oaks Linguistics Club focuses on preparing for exciting linguistics competitions like NACLO. We meet biweekly to solve fun linguistic puzzles and explore various languages. The time commitment is minimal, and everyone is welcome!</p>
+            <h3>Why Join?</h3>
+            <ul>
+                <li>Prepare for NACLO and other competitions</li>
+                <li>Learn about language structures</li>
+                <li>Minimal time commitment</li>
+                <li>Have fun solving puzzles!</li>
+            </ul>
+        </section>
+
+        <section id="competitions">
+            <h2>Competitions</h2>
+            <p>Our main focus is NACLO, the North American Computational Linguistics Olympiad. It’s a fun, exciting way to explore how languages work while competing in a friendly environment. No previous experience is needed!</p>
+            <h3>How to Prepare</h3>
+            <ul>
+                <li>Attend our biweekly meetings for tips and practice problems</li>
+                <li>Work through past NACLO problems</li>
+                <li>Join group discussions and share problem-solving strategies</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to join the club, feel free to contact us!</p>
+            <p><strong>Club President:</strong> Shayaan & Radvin </p>
+            <p><strong>Meeting Times:</strong> Biweekly on Wednesdays</p>
+            <p><strong>Email:</strong> <a href="mailto:whiteoakslinguistics@example.com">whiteoakslinguistics@example.com</a></p>
+        </section>
+    </main>
+
+    <script>
+        // Array of club names in different scripts
+        const clubNames = [
+            "White Oaks Linguistics Club", // English
+            "Уайт Оукс Лингвистикс Клуб", // Cyrillic (Russian)
+            "نادي اللغويات وايت أوكس",    // Arabic
+            "화이트 오크스 언어 클럽",     // Korean
+            "白橡樹語言俱樂部",             // Chinese (Traditional)
+            "クラブ ホワイト オークス",    // Japanese
+            "Κλαμπ Γλωσσολογίας Λευκών Δρυών" // Greek
+        ];
+
+        // Set interval for dynamic header change
+        let currentIndex = 0;
+        const titleElement = document.getElementById('club-title');
+
+        function changeTitle() {
+            // Update the header with the current language
+            titleElement.textContent = clubNames[currentIndex];
+            // Move to the next title in the array
+            currentIndex = (currentIndex + 1) % clubNames.length;
+        }
+
+        // Change the title every 3 seconds
+        setInterval(changeTitle, 3000);
+    </script>
+</body>
+</html>
